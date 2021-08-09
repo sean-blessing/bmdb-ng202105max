@@ -8,13 +8,21 @@ import { AppComponent } from './app.component';
 import { MovieListComponent } from './feature/movie/movie-list/movie-list.component';
 import { ActorListComponent } from './feature/actor/actor-list/actor-list.component';
 import { CreditListComponent } from './feature/actor/credit-list/credit-list.component';
+import { MenuComponent } from './core/menu/menu.component';
+import { MovieCreateComponent } from './feature/movie/movie-create/movie-create.component';
+import { MovieEditComponent } from './feature/movie/movie-edit/movie-edit.component';
+import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
     ActorListComponent,
-    CreditListComponent
+    CreditListComponent,
+    MenuComponent,
+    MovieCreateComponent,
+    MovieEditComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
