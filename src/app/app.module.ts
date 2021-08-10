@@ -12,6 +12,9 @@ import { MenuComponent } from './core/menu/menu.component';
 import { MovieCreateComponent } from './feature/movie/movie-create/movie-create.component';
 import { MovieEditComponent } from './feature/movie/movie-edit/movie-edit.component';
 import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
+import { CreditDetailComponent } from './feature/credit/credit-detail/credit-detail.component';
+import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
+import { CreditCreateComponent } from './feature/credit/credit-create/credit-create.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.
     MenuComponent,
     MovieCreateComponent,
     MovieEditComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    CreditDetailComponent,
+    CreditEditComponent,
+    CreditCreateComponent
   ],
   imports: [
     BrowserModule,
