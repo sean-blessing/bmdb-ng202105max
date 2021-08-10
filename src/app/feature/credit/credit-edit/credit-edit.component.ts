@@ -28,30 +28,30 @@ export class CreditEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-        // get the credit to edit
-        this.route.params.subscribe(parms => this.creditId = parms["id"]);
-        this.creditSvc.get(this.creditId).subscribe(
-          resp => {
-            this.credit = resp as Credit;
-          },
-          err => { console.log(err); }
-        );
+    // get the credit to edit
+    this.route.params.subscribe(parms => this.creditId = parms["id"]);
+    this.creditSvc.get(this.creditId).subscribe(
+      resp => {
+        this.credit = resp as Credit;
+      },
+      err => { console.log(err); }
+    );
 
-        // populate list of actors
-        this.actorSvc.list().subscribe(
-          resp => {
-            this.actors = resp as Actor[];
-          },
-          err => { console.log(err); }
-        );
+    // populate list of actors
+    this.actorSvc.list().subscribe(
+      resp => {
+        this.actors = resp as Actor[];
+      },
+      err => { console.log(err); }
+    );
 
-        // populate list of movies
-        this.movieSvc.list().subscribe(
-          resp => {
-            this.movies = resp as Movie[];
-          },
-          err => { console.log(err); }
-        );
+    // populate list of movies
+    this.movieSvc.list().subscribe(
+      resp => {
+        this.movies = resp as Movie[];
+      },
+      err => { console.log(err); }
+    );
 
   }
 
