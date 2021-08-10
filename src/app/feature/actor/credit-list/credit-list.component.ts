@@ -21,7 +21,6 @@ export class CreditListComponent implements OnInit {
     this.creditSvc.list().subscribe(
       resp => {
         this.credits = resp as Credit[];
-        console.log(this.credits);
       },
       err => {
         console.log(err);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Actor } from 'src/app/model/actor.class';
 import { Credit } from 'src/app/model/credit.class';
 import { Movie } from 'src/app/model/movie.class';
@@ -14,18 +14,29 @@ import { MovieService } from 'src/app/service/movie.service';
 })
 export class CreditEditComponent implements OnInit {
   title: string = 'Credit-Edit';
-  credit: Credit = new Credit();
+  credit: any = null;
   actors: Actor[] = [];
   movies: Movie[] = [];
+  creditId: number = 0;
 
   constructor(
     private creditSvc: CreditService,
     private actorSvc: ActorService,
     private movieSvc: MovieService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+        // get the credit to edit
+        this.route.params.subscribe(parms => this.creditId = parms["id"]);
+        this.creditSvc.get(this.creditId).subscribe(
+          resp => {
+            this.credit = resp as Credit;
+          },
+          err => { console.log(err); }
+        );
+
         // populate list of actors
         this.actorSvc.list().subscribe(
           resp => {
