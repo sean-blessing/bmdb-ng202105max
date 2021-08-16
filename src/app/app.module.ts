@@ -20,6 +20,9 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { ActorCreateComponent } from './feature/actor/actor-create/actor-create.component';
+import { ActorEditComponent } from './feature/actor/actor-edit/actor-edit.component';
+import { ActorDetailComponent } from './feature/actor/actor-detail/actor-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { UserEditComponent } from './feature/user/user-edit/user-edit.component'
     UserLoginComponent,
     UserCreateComponent,
     UserEditComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ActorCreateComponent,
+    ActorEditComponent,
+    ActorDetailComponent
   ],
   imports: [
     BrowserModule,
