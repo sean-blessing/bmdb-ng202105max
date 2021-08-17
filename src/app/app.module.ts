@@ -23,6 +23,7 @@ import { UserEditComponent } from './feature/user/user-edit/user-edit.component'
 import { ActorCreateComponent } from './feature/actor/actor-create/actor-create.component';
 import { ActorEditComponent } from './feature/actor/actor-edit/actor-edit.component';
 import { ActorDetailComponent } from './feature/actor/actor-detail/actor-detail.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ActorDetailComponent } from './feature/actor/actor-detail/actor-detail.
     UserDetailComponent,
     ActorCreateComponent,
     ActorEditComponent,
-    ActorDetailComponent
+    ActorDetailComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

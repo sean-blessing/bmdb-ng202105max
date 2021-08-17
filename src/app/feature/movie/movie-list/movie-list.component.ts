@@ -11,6 +11,10 @@ import { Movie } from 'src/app/model/movie.class';
 export class MovieListComponent implements OnInit {
   movies: Movie[] = [];
   title: string = 'Movie List';
+  // default sort column to id (assumes table has an id field)
+  sortCriteria: string = 'id';
+  // default sort criteria of ascending
+  sortOrder: string = 'asc';
 
   constructor(
     private movieSvc: MovieService,
@@ -26,6 +30,14 @@ export class MovieListComponent implements OnInit {
       },
       err => { console.log(err); }
     );
+  }
+
+  sortBy(column: string): void {
+    console.log("movie list sortBy called")
+    if(column == this.sortCriteria){
+      this.sortOrder = (this.sortOrder == "desc") ? "asc" : "desc";
+    }
+    this.sortCriteria = column;
   }
 
 }
