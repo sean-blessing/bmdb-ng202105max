@@ -14,7 +14,7 @@ export class SystemService {
 
   // not applicable for bmdb-ng as there is no 'admin' property on user
   // isAdmin(): boolean {
-  //   return (this.loggedInUser == null) ? false : this.loggedInUser.admin;
+  //   return (this.loggedInUser.id==0) ? false : this.loggedInUser.admin;
   // }
 
   checkLogin(): void {

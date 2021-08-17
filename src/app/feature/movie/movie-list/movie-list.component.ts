@@ -22,7 +22,12 @@ export class MovieListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // console log just demonstrates how to get the logged in user
     console.log("Movie List, checking loggedInUser in sysSvc:  ", this.sysSvc.loggedInUser);
+
+    // call checkLogin from sysSvc to forward to login if not authenticated
+    this.sysSvc.checkLogin();
+
     this.movieSvc.list().subscribe(
       resp => {
         this.movies = resp as Movie[];
