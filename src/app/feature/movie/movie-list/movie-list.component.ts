@@ -2,6 +2,7 @@ import { SystemService } from './../../../service/system.service';
 import { MovieService } from './../../../service/movie.service';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/model/movie.class';
+import { User } from 'src/app/model/user.class';
 
 @Component({
   selector: 'app-movie-list',
@@ -15,6 +16,7 @@ export class MovieListComponent implements OnInit {
   sortCriteria: string = 'id';
   // default sort criteria of ascending
   sortOrder: string = 'asc';
+  loggedInUser: User = new User();
 
   constructor(
     private movieSvc: MovieService,
@@ -22,6 +24,8 @@ export class MovieListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // set sysSvc user in loggedInUser since sysSvc is private
+    this.loggedInUser = this.sysSvc.loggedInUser;
     // console log just demonstrates how to get the logged in user
     console.log("Movie List, checking loggedInUser in sysSvc:  ", this.sysSvc.loggedInUser);
 
