@@ -2,6 +2,7 @@ import { MovieService } from './../../../service/movie.service';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/model/movie.class';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-movie-create',
@@ -28,7 +29,12 @@ export class MovieCreateComponent implements OnInit {
         this.movie = resp as Movie;
         this.router.navigateByUrl("/movie-list");
       },
-      err => { console.log(err); }
+      err => {
+        console.log(err);
+        let msg: string = `Error!  Check console.\nStatus: ${err.status},\n`;
+        msg += `${err.message}`;
+        alert(msg);
+       }
     );
 
   }

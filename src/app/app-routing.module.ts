@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'credit-create', component: CreditCreateComponent},
   { path: 'credit-edit/:id', component: CreditEditComponent},
   { path: 'credit-detail/:id', component: CreditDetailComponent},
+  { path: 'credit-detail/:id', component: CreditDetailComponent},
   { path: '**', component: MovieListComponent }
 ];
 
